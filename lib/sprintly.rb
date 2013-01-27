@@ -8,7 +8,7 @@ class Sprintly
   end
 
   def base_url
-  	"https://sprint.ly/api/"
+  	"#{@user}:#{@api_key} https://sprint.ly/api/"
   end
 
   def products_url(product_id)
