@@ -1,3 +1,3 @@
 sprintly-client
 ===============
-Simple Sprintly service client
+Simple Sprint.ly ruby client
