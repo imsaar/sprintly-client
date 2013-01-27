@@ -9,3 +9,5 @@ To dump all your sprint.ly items to a pipe (|) demlimited text file from command
 * export SPRINTLY_PRODUCT_ID="1234"
 
 > ruby -w sprintly_dump.rb > /var/tmp/dump.txt
+
+Reference: https://github.com/sprintly/sprint.ly-docs/blob/master/API/Items.mkd
