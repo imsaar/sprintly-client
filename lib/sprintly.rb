@@ -1,3 +1,5 @@
+require 'json'
+
 class Sprintly
   attr_accessor :api_key
   attr_accessor :user

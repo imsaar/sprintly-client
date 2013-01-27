@@ -14,17 +14,17 @@ class SprintTest < MiniTest::Unit::TestCase
   end
 
   def test_base_url
-  	expected_base_url = "#{USER}:#{API_KEY} https://sprint.ly/api/"
+  	expected_base_url = "#{USER}:#{API_KEY} 'https://sprint.ly/api/"
   	assert_equal(expected_base_url, Sprintly.new(USER, API_KEY).base_url)
   end
 
   def test_products_url
-  	expected_products_url = "#{USER}:#{API_KEY} https://sprint.ly/api/products/1234/"
+  	expected_products_url = "#{USER}:#{API_KEY} 'https://sprint.ly/api/products/1234/"
   	assert_equal(expected_products_url, Sprintly.new(USER, API_KEY).products_url(1234))
   end
 
   def test_product_items_url
-  	expected_product_items_url = "#{USER}:#{API_KEY} https://sprint.ly/api/products/1234/items.json"
+  	expected_product_items_url = "#{USER}:#{API_KEY} 'https://sprint.ly/api/products/1234/items.json'"
   	assert_equal(expected_product_items_url,
   		 Sprintly.new(USER, API_KEY).product_items_url(1234))
   end
@@ -32,8 +32,8 @@ class SprintTest < MiniTest::Unit::TestCase
   def test_product_items_url_with_options
   	product_items_url = Sprintly.new(USER, API_KEY).product_items_url(1234)
     options = {:limit => 5, :offset => 10, :frivilous => true} 
-    options_string = "?limit=5&offset=10&frivilous=true&"
-    expected_product_items_url = product_items_url + options_string
+    options_string = "?limit=5&offset=10&frivilous=true'"
+    expected_product_items_url = product_items_url.chop! + options_string
     assert_equal(expected_product_items_url, 
       Sprintly.new(USER, API_KEY).product_items_url(1234, options))
   end

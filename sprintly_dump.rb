@@ -1,6 +1,4 @@
 require './lib/sprintly'
-require 'json'
-require 'pp'
 
 $user = ENV['SPRINTLY_USER']
 $password = ENV['SPRINTLY_API_KEY']
